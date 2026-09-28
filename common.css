@@ -1,0 +1,131 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #111111;
+    color: #ffffff;
+    font-family: "Noto_Sans", Meiryo, sans-serif;
+    font-size:18px;
+    line-height:1.8;
+
+    opacity: 0;
+}
+
+body.page-loaded{
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+h1 {
+    margin: 70px auto 40px;
+    width: 80%;
+    font-size: 54px;
+    color: #ffffff;
+    background: transparent;
+    padding: 0 0 18px;
+    border-bottom: 5px solid #0c67b1;
+    text-align: left;
+    font-weight: bold;
+ }
+
+h3{
+    font-size: 25px;
+}
+h4{
+    font-size: 40px;
+    font-weight: bold;
+}
+p {
+    font-size: 18px; 
+    line-height: 1.8;
+} 
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+:root {
+    --accent-color: #222222;
+}
+
+@font-face {
+    font-family: 'Noto_Sans';
+    src: url('./fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+}
+
+.Noto_Sans {
+    font-family: 'Noto_Sans';
+}
+
+@font-face {
+    font-family: 'Tanugo';
+    src: url('./fonts/Tanugo-Regular.otf') format('truetype');
+}
+
+.Tanugo {
+    font-family: 'Tanugo';
+}
+
+@font-face {
+    font-family: 'Kazuki';
+    src: url('./fonts/KazukiReiwa\ -\ Light.ttf') format('truetype');
+}
+
+.Kazuki {
+    font-family: 'Kazuki';
+}
+
+@media screen and (max-width:768px){
+
+    h1{
+        width: 90%;
+        font-size: 36px;
+        margin: 50px auto 30px;
+        padding-bottom: 12px;
+    }
+
+    h3{
+        font-size: 22px;
+    }
+
+    h4{
+        font-size: 28px;
+    }
+
+    p{
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+}
+
+.back-top{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    margin: 0;
+    z-index: 100;
+    background: none ;
+    padding: 0;
+}
+
+.back-top a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

@@ -1,0 +1,162 @@
+.nav-menu {
+  background-color: #0c67b1;
+  color: #fff;
+  padding: 14px 24px;
+  font-family: "Noto_Sans";
+}
+
+.list-page .nav-menu{
+    background-color: transparent;
+}
+
+.list-page .menu-item a{
+    color: #ffffff;
+    font-family: "Kazuki";
+}
+
+.list-page .menu-item a::after{
+    background: #ffffff;
+}
+
+.list-page .drop-menu-list{
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.list-page .drop-menu-item a{
+    color: white;
+}
+
+.list-page .drop-menu-item a:hover{
+    background: rgba(255,255,255,0.1);
+}
+
+.fancy-list {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: #FFFFFF;
+  font-size: 22px;
+  text-align: center;
+}
+
+.menu-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.menu-item {
+  position: relative;
+}
+.menu-item:last-child {
+  border-right: none;
+}
+
+.menu-item:hover .drop-menu-list {
+  visibility: visible; 
+}
+.menu-item a{
+    position: relative;
+    align-items: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 15px;
+    white-space: nowrap;
+    
+}
+
+.menu-item a::after{
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: 5px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ffffff;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.menu-item a:hover::after{
+    width: 80%;
+}
+
+.drop-menu{
+    position: relative;
+    z-index: 1000;
+}
+
+.drop-menu-list{
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+
+    background: white;
+    border: 2px solid #0c67b1;
+    border-radius: 0;
+}
+
+.drop-menu-item a{
+    color: #333;
+    height: 40px;
+    
+}
+
+.drop-menu-item a:hover{
+    background: #f5f5f5;
+}
+
+.drop-menu:hover .drop-menu-list{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media screen and (max-width:768px){
+
+    .top-area{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+    }
+
+    .nav-menu{
+        width:100%;
+        padding:14px 0;
+    }
+
+    .menu-list{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        gap:20px;
+        padding:0;
+        margin:0;
+    }
+
+}

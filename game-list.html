@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>
+            私がハマったゲームたち</title>
+            <link rel="stylesheet" href="./list.css">
+            <link rel="stylesheet" href="./dist/css/swiper.css">
+            <link rel="stylesheet" href="./menu.css">
+            <link rel="stylesheet" href="./common.css">
+            <link rel="stylesheet" href="./transision.css">
+    </head>
+    <body id=#top>
+      <canvas id="bg-canvas"></canvas>
+<nav class="nav-menu">
+  <ul class="menu-list fancy-list">
+    <li class="menu-item">
+      <a href="Home.html">Home</a>
+    </li>
+    <li class="menu-item drop-menu">
+      <a href="#">記事</a>
+      <ul class="drop-menu-list">
+        <li class="drop-menu-item">
+          <a href="child-list.html">幼少期</a>
+        </li>
+        <li class="drop-menu-item">
+          <a href="high-list.html">中高生期</a>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <a href="game-list.html">ゲーム一覧</a>
+    </li>
+  </ul>
+</nav>
+   <div class="game-list">
+
+    <a href="https://www.capcom-games.com/product/ja-jp/monsterhunterportable3rd/" target="_blank">
+      <div class="game-item">モンスターハンターP3</div>
+    </a>
+    <a href="https://www.danball-senki.jp/w/" target="_blank">
+      <div class="game-item">ダンボール戦記W</div>
+    </a>
+    <a href="https://www.pokemon.co.jp/ex/xy/" target="_blank">
+      <div class="game-item">ポケットモンスターX</div>
+    </a>
+    <a href="https://www.youkai-watch.jp/yw2/" target="_blank">
+      <div class="game-item">妖怪ウォッチ真打</div>
+    </a>
+    <a href="https://www.monsterhunter.com/xx/3ds/" target="_blank">
+      <div class="game-item">モンスターハンターXX</div>
+    </a>
+    <a href="https://ssl.media-vision.co.jp/works/891" target="_blank">
+      <div class="game-item">メギド72</div>
+    </a>
+    <a href="https://www.smashbros.com/ja_JP/" target="_blank">
+      <div class="game-item">スマブラSP</div>
+    </a>
+    <a href="https://www.minecraft.net/ja-jp" target="_blank">
+      <div class="game-item">Minecraft</div>
+    </a>
+    <a href="https://overwatch.blizzard.com/ja-jp/" target="_blank">
+      <div class="game-item">オーバーウォッチ</div>
+    </a>
+    <a href="https://bethesda.net/ja/article/2zwwDBsILjpuGfKfTw4gx2/the-elder-scrolls-v-skyrim-welcome" target="_blank">
+      <div class="game-item">Skyrim</div>
+    </a>
+
+  </div>
+
+  <p class="back-top">
+        <a href="#top">↑</a>
+    </p>
+
+  <div class="page-transition"></div>
+
+<script>
+
+function init(){
+
+    const canvas =
+        document.getElementById("bg-canvas");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    canvas.dataset.endpos = 0;
+
+    setInterval(drawCanvasOnTimer, 20, canvas);
+}
+
+function drawCanvasOnTimer(obj){
+
+    const ctx = obj.getContext("2d");
+
+    ctx.clearRect(0, 0, obj.width, obj.height);
+
+    let endpos =
+        parseFloat(obj.dataset.endpos);
+
+    ctx.lineWidth = 2;
+ctx.strokeStyle = "rgba(12,103,177,0.3)";
+
+const circles = [
+    [100,100,30],
+    [300,200,50],
+    [600,150,40],
+    [900,250,60],
+
+    [200,500,45],
+    [800,600,35],
+
+    [1200,150,50],
+    [1400,400,30],
+
+    [500,700,55],
+    [1000,750,40]
+];
+
+for(let i=0;i<circles.length;i++){
+
+    ctx.beginPath();
+
+    ctx.arc(
+    circles[i][0],
+    circles[i][1],
+    circles[i][2],
+    endpos,
+    endpos + Math.PI,
+    false
+);
+
+    ctx.stroke();
+}
+
+    const d_angle = Math.PI * 2 / 100;
+
+        endpos += d_angle;
+
+    obj.dataset.endpos = endpos;
+}
+
+window.onload = init;
+
+</script>
+
+<script src="./transision.js"></script>
+
+    </body>
+</html>
+

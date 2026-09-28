@@ -1,0 +1,113 @@
+body{
+    margin:0;
+    overflow:hidden;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+}
+
+.background img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    opacity:1;
+    transition:opacity 0.3s ease;
+}
+
+.background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0,0,0,0.05) 0%,
+            rgba(0,20,50,0.2) 50%,
+            rgba(0,0,0,0.6) 80%,
+            rgba(0,0,0,0.9) 100%
+        );
+}
+
+.showcase{
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.showcase-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    width: 600px;
+    height: 500px;
+
+    position:relative;
+}
+
+.showcase-list li{
+    position: absolute;
+    width: 600px;
+    text-align: center;
+    left: 50%;
+    top: 40%;
+
+    transform: translate(-50%, -50%);
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+
+    white-space: nowrap;
+    font-size:clamp(20px, 2vw, 40px);
+}
+
+
+.showcase-list li.active{
+    font-size:clamp(32px, 4vw, 64px);
+}
+
+.showcase-list li.active a{
+    text-shadow:
+        0 0 15px rgba(255,255,255,0.8),
+        0 0 40px rgba(255,255,255,0.4);
+}
+
+.showcase-list a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.showcase-list a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (max-width:768px){
+
+    .showcase-list li{
+        font-size:24px;
+    }
+
+    .showcase-list li.active{
+        font-size:32px;
+    }
+
+}
+
+@media screen and (max-width:768px){
+
+    .game-card{
+        width:95%;
+        padding:15px;
+    }
+
+}
